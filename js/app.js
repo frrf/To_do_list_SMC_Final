@@ -21,6 +21,15 @@ const addDeleteIcon = (newItem) => {
   newItem.appendChild(deleteButtonArea);
 }
 
+//adds delete functionality to delete icon
+const addDeleteOnClick = () => {
+  Array.from(deleteIcon).forEach(icon => {
+    icon.onclick = function () {
+        let deleteItem = this.parentElement;
+        deleteItem.style.display = "none";
+    }
+  })
+};
 
 //add user input to list
 const addItem = () => {
@@ -34,6 +43,7 @@ const addItem = () => {
   //= if inputItem is empty, send alert, else add new list item to the output section and clear text in input field
   
   addDeleteIcon(newItem); //call function to create delete icon at the end of the inside of created item
+  addDeleteOnClick(); //deletes / hides list item
 }
 
-submitButton.addEventListener("click", addItem)
+submitButton.addEventListener("click", addItem);
