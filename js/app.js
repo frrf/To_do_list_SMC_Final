@@ -1,22 +1,20 @@
-const userItem = document.getElementById("item");
 const submitButton = document.getElementById("submit-item");
 const outputSection = document.getElementById("output");
-const deleteButton = document.getElementById("delete-item");
-let i = 0;
+let deleteIcon = document.getElementsByClassName("deleteIcon"); 
 
-const addToList = () => { //adds item to list
-  let added = document.createElement("li");
-  added.className = "list-item";
-  added.id = "id-item-"+i;
-  added.textContent = userItem.value;
-  outputSection.appendChild(added);
+
+//add user input to list
+const addItem = () => {
+  let newItem = document.createElement("li");
+  let inputItem = document.getElementById("item");
+  let text = document.createTextNode(inputItem.value); //gets text of user input
+  newItem.appendChild(text);                           //adds user inputed text to new list item
+  inputItem.value.length === 0 ? alert("Input is empty") 
+                               : outputSection.appendChild(newItem), 
+                                 document.getElementById("item").value = ""; 
+  // if inputItem is empty, send alert, else add new list item to the output section and clear text in input field
+
+
 }
 
-const removeFromList = () => {
-  let remove = document.querySelector("li");
-  outputSection.removeChild(remove);
-  i--;
-}
-
-submitButton.addEventListener("click", addToList);
-deleteButton.addEventListener("click", removeFromList)
+submitButton.addEventListener("click", addItem)
