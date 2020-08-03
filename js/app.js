@@ -22,7 +22,6 @@ const addDeleteIcon = (newItem) => {
 }
 
 
-
 //add user input to list
 const addItem = () => {
   let newItem = document.createElement("li");

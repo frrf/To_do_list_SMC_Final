@@ -18,3 +18,7 @@
   text-decoration: line-through;
   transition: .5s;
 }
+
+#output li {
+  user-select:none;
+}
