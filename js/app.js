@@ -2,6 +2,15 @@ const submitButton = document.getElementById("submit-item");
 const outputSection = document.getElementById("output");
 let deleteIcon = document.getElementsByClassName("deleteIcon"); 
 
+//gives list item check on off functionality
+let list = document.querySelector('ul');
+list.addEventListener('click', function(selectItem) {
+  if (selectItem.target.tagName === 'LI') {
+    selectItem.target.classList.toggle('checked'); //gives checked class to selected item = strikethrough
+  }
+});
+
+
 
 //add user input to list
 const addItem = () => {
@@ -13,7 +22,6 @@ const addItem = () => {
                                : outputSection.appendChild(newItem), 
                                  document.getElementById("item").value = ""; 
   // if inputItem is empty, send alert, else add new list item to the output section and clear text in input field
-
 
 }
 

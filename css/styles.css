@@ -1,0 +1,20 @@
+:root {
+  --checkedOff: rgb(30, 255, 0);
+  --checkedOffTransition: rgb(210, 255, 204);
+  --checkedHover: rgb(229, 255, 226)
+}
+#output li:hover {
+  cursor: pointer;
+  background-color: var(--checkedHover);
+}
+#output li:active {
+  background-color: var(--checkedOffTransition);
+}
+#output li:not(:active) {
+  transition: .5s;
+}
+#output li.checked {
+  background: var(--checkedOff);
+  text-decoration: line-through;
+  transition: .5s;
+}
