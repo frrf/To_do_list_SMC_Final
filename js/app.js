@@ -1,5 +1,6 @@
 const submitButton = document.getElementById("submit-item");
 const outputSection = document.getElementById("output");
+const textInput = document.getElementById("item");
 let deleteIcon = document.getElementsByClassName("deleteIcon"); //captures delete icons in item list
 
 const toggleChecked = (selectItem) => {
@@ -46,4 +47,12 @@ const addItem = () => {
   addDeleteOnClick(); //deletes / hides list item
 }
 
+//allows users to submit item via enter key
+const addItemKey = (event) => {
+  textInput.value.length > 0 && event.keyCode === 13
+  ? addItem()
+  : console.log("error");
+}
+
 submitButton.addEventListener("click", addItem);
+textInput.addEventListener("keypress", addItemKey)
