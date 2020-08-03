@@ -1,8 +1,111 @@
 :root {
   --checkedOff: rgb(30, 255, 0);
   --checkedOffTransition: rgb(210, 255, 204);
-  --checkedHover: rgb(229, 255, 226)
+  --checkedHover: rgb(229, 255, 226);
+  --deleteHover: rgb(255, 0, 0);
+  --deleteClick: rgb(170, 43, 43);
+  --darkblue: rgb(4, 4, 54);
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-top: 4vh;
+}
+
+h1 {
+  color: var(--darkblue);
+}
+
+.app-container {
+  margin-top: 2vh;
+  border: var(--darkblue);
+  border-width: .5vh;
+  border-style: solid;
+  border-radius: 2vh;
+  padding-left: 4vh;
+  padding-right: 4vh;
+  padding-bottom: 2vh;
+  padding-top: 2vh;
+  width: 80%;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: rgb(53, 53, 53);
+}
+
+#submit-item {
+  cursor: pointer;
+  width: 50%;
+  margin: auto;
+  margin-top: 1vh;
+  background-color: rgb(19, 16, 180);
+  color: white;
+  border-style: solid;
+  border-radius: 2vh;
+  border-color: var(--darkblue);
+  padding: 1vh;
+}
+
+#item {
+  border-width: .5vh; 
+  border-style: solid;
+  border-radius: 1vh;
+  border-color: var(--darkblue);
+  padding: 2vh;
+  background: rgb(239, 252, 255);
+  margin: 1vh;
+}
+
+#submit-item:hover {
+  border-color: black;
+  background-color: blue;
+}
+
+#submit-item:active {
+  border-color: rgb(4, 0, 63);
+  background-color: rgb(0, 0, 56);
+}
+
+hr {
+  border-style: solid;
+  border-color: var(--deleteHover);
+  margin-top: 5px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 1vh;
+  border-style: solid;
+  border-color: var(--darkblue);
+  padding: 1vh;
+}
+
+span {
+  text-decoration: none !important;
+  text-decoration-color: transparent;
+  font-size: 75%;
+  border-style: solid;
+  border-color: var(--deleteClick);
+  background-color: rgb(255, 105, 105);
+  font-weight: 900;
+}
+
+/* Output Styles */
 #output li:hover {
   cursor: pointer;
   background-color: var(--checkedHover);
@@ -21,4 +124,14 @@
 
 #output li {
   user-select:none;
+}
+
+#output li span:hover {
+  background-color: var(--deleteHover);
+  transition: .5s;
+}
+
+#output li span:active {
+  background-color: var(--deleteClick);
+  transition: .1s;
 }
